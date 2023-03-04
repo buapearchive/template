@@ -5,13 +5,11 @@ import { BetterClient, TextCommandOptions } from "../.."
 export default class TextCommand {
 	public readonly client: BetterClient
 	public readonly key: string
-	public readonly dotPerm?: string
 	private readonly adminOnly: boolean
 
 	constructor(key: string, client: BetterClient, options: TextCommandOptions) {
 		this.key = key
 		this.client = client
-		if (this.dotPerm) this.dotPerm = options.dotPerm
 		this.adminOnly = options.adminOnly || false
 	}
 

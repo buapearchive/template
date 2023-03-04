@@ -6,12 +6,9 @@ import { Message, EmbedBuilder } from "discord.js"
 import { inspect } from "util"
 import db from "@internal/database"
 import * as database from "@internal/database"
-import * as experiments from "@internal/experiments"
-import * as i18n from "@internal/i18n"
-import * as leveling from "@internal/leveling"
 import * as lib from "@internal/lib"
 import * as functions from "@internal/functions"
-const kiai = { db, database, experiments, i18n, config, lib, functions, logger: { logger, DebugType }, leveling }
+const bot = { db, database, config, lib, functions, logger: { logger, DebugType } }
 
 export default class Eval extends TextCommand {
 	constructor(client: BetterClient) {
@@ -19,7 +16,7 @@ export default class Eval extends TextCommand {
 			adminOnly: true,
 		})
 
-		logger.null(kiai)
+		logger.null(bot)
 	}
 
 	override async run(message: Message, args: string[]) {
