@@ -2,7 +2,7 @@
 
 import db, { Prisma, UserGuildData } from ".."
 
-export const getGuildData = async (guildId: string, include: Prisma.GuildInclude = { premiumGuildSlots: true }) => {
+export const getGuildData = async (guildId: string, include: Prisma.GuildInclude = {}) => {
 	if (!guildId) throw new Error("No guild ID provided")
 	const guildData = await db.guild.upsert({
 		where: {
@@ -17,7 +17,7 @@ export const getGuildData = async (guildId: string, include: Prisma.GuildInclude
 	return guildData
 }
 
-export const getUserData = async (userId: string, include: Prisma.UserInclude = { premiumGuildSlots: true }) => {
+export const getUserData = async (userId: string, include: Prisma.UserInclude = {}) => {
 	const userData = await db.user.upsert({
 		where: {
 			id: userId,
