@@ -1,0 +1,27 @@
+{
+	"name": "bot",
+	"private": true,
+	"main": "dist/src/index.js",
+	"scripts": {
+		"olddev": "pnpm run clean && tsc -b -w && cross-env NODE_ENV=development node .",
+		"dev": "pnpm run clean && cross-env NODE_ENV=development tsc-watch --onSuccess \"node .\"",
+		"build": "pnpm run clean && tsc -b",
+		"start": "cross-env NODE_ENV=production node .",
+		"lint": "eslint . --ext .ts --fix",
+		"clean": "rimraf dist turbo-*.log"
+	},
+	"dependencies": {
+		"@internal/config": "workspace:*",
+		"@internal/database": "workspace:*",
+		"@internal/functions": "workspace:*",
+		"@internal/lib": "workspace:*",
+		"@internal/logger": "workspace:*",
+		"croner": "^5.6.0",
+		"discord.js": "^14.7.1"
+	},
+	"devDependencies": {
+		"@types/ms": "^0.7.31",
+		"@types/node": "^18.11.19",
+		"tsconfig": "workspace:*"
+	}
+}
