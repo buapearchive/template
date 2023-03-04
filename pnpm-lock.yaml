@@ -65,7 +65,7 @@ importers:
       '@internal/logger': workspace:*
       '@types/ms': ^0.7.31
       '@types/node': ^18.11.19
-      croner: ^5.6.0
+      croner: ^6.0.0
       discord.js: ^14.7.1
       tsconfig: workspace:*
     dependencies:
@@ -74,7 +74,7 @@ importers:
       '@internal/functions': link:../../packages/functions
       '@internal/lib': link:../../packages/lib
       '@internal/logger': link:../../packages/logger
-      croner: 5.7.0
+      croner: 6.0.1
       discord.js: 14.7.1
     devDependencies:
       '@types/ms': 0.7.31
@@ -1422,8 +1422,8 @@ packages:
       vary: 1.1.2
     dev: false
 
-  /croner/5.7.0:
-    resolution: {integrity: sha512-9pSLe+tDJnmNak2JeMkz6ZmTCXP5p6vCxSd4kvDqrTJkqAP62j2uAEIZjf8cPDZIakStujqVzh5Y5MIWH3yYAw==}
+  /croner/6.0.1:
+    resolution: {integrity: sha512-Hnf0u+mbxITR45sQMm2b2OD7Brgit9Z1d8cmEe/ioij25nkA7L9WE5MOoBp96XsJCySLnigbCakrgAu96+eXpw==}
     engines: {node: '>=6.0'}
     dev: false
 
@@ -2384,7 +2384,7 @@ packages:
     dev: false
 
   /get-intrinsic/1.2.0:
-    resolution: {integrity: sha512-L049y6nFOuom5wGyRc3/gdTLO94dySVKRACj1RmJZBQXlbTMhtNIgkWkUHq+jYmZvKf14EW1EoJnnjbmoHij0Q==}
+    resolution: {integrity: sha512-L049y6nFOuom5wGyRc3/gdTLO94dySVKRACj1RmJZBQXlbTMhtNIgkWkUHq+jYmZvKf14EW1EoJnnjbmoHij0Q==, registry: https://npm.opensourceregistry.com/}
     dependencies:
       function-bind: 1.1.1
       has: 1.0.3
@@ -2529,7 +2529,7 @@ packages:
     dev: false
 
   /has-symbols/1.0.3:
-    resolution: {integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==}
+    resolution: {integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==, registry: https://npm.opensourceregistry.com/}
     engines: {node: '>= 0.4'}
     dev: false
 
@@ -3100,7 +3100,7 @@ packages:
     dev: false
 
   /ms/2.0.0:
-    resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
+    resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==, registry: https://npm.opensourceregistry.com/}
     dev: false
 
   /ms/2.1.2:
@@ -3208,7 +3208,7 @@ packages:
     dev: false
 
   /object-inspect/1.12.3:
-    resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
+    resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==, registry: https://npm.opensourceregistry.com/}
     dev: false
 
   /object-is/1.1.5:
@@ -3820,7 +3820,7 @@ packages:
     dev: false
 
   /side-channel/1.0.4:
-    resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
+    resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==, registry: https://npm.opensourceregistry.com/}
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.2.0
@@ -3980,7 +3980,7 @@ packages:
     dev: false
 
   /string_decoder/1.3.0:
-    resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
+    resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==, registry: https://npm.opensourceregistry.com/}
     dependencies:
       safe-buffer: 5.2.1
 
@@ -4329,7 +4329,7 @@ packages:
     dev: false
 
   /util-deprecate/1.0.2:
-    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==, registry: https://npm.opensourceregistry.com/}
 
   /utils-merge/1.0.1:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==, registry: https://npm.opensourceregistry.com/}
