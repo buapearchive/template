@@ -7,7 +7,7 @@ import {
 	MessageContextMenuCommandInteraction,
 	UserContextMenuCommandInteraction,
 } from "discord.js"
-import { BetterClient, ApplicationCommandOptions } from "../.."
+import { BetterClient, ApplicationCommandOptions } from "../../index.js"
 import BaseComponent from "./_BaseComponent.js"
 
 export default class ApplicationCommand extends BaseComponent {

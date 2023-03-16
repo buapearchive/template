@@ -1,5 +1,5 @@
 import { ModalSubmitInteraction } from "discord.js"
-import { BetterClient } from "../.."
+import { BetterClient } from "../../index.js"
 
 export default class ModalSubmit {
 	/**

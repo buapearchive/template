@@ -3,6 +3,7 @@
     "private": true,
     "main": "./dist/index.js",
     "typings": "./index.ts",
+	"type": "module",
     "scripts": {
         "lint": "eslint . --ext .ts --fix",
         "build": "tsc",

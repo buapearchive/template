@@ -3,6 +3,7 @@
 	"private": true,
 	"main": "./dist/index.js",
 	"typings": "./index.ts",
+	"type": "module",
 	"dependencies": {
 		"@internal/config": "workspace:*",
 		"@internal/logger": "workspace:*",

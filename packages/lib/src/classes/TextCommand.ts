@@ -1,6 +1,6 @@
 import { isAdmin } from "@internal/functions"
 import { APIEmbed, Message } from "discord.js"
-import { BetterClient, TextCommandOptions } from "../.."
+import { BetterClient, TextCommandOptions } from "../../index.js"
 
 export default class TextCommand {
 	public readonly client: BetterClient

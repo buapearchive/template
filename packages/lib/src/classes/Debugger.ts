@@ -1,6 +1,6 @@
 import { logger } from "@internal/logger"
 import { Snowflake } from "discord.js"
-import { BetterClient } from "../.."
+import { BetterClient } from "../../index.js"
 
 const divider = "\n========================================\n"
 

@@ -1,4 +1,4 @@
-import { BetterClient, TextCommand } from "../.."
+import { BetterClient, TextCommand } from "../../index.js"
 import { Message } from "discord.js"
 import { generateErrorMessage, getFiles } from "@internal/functions"
 import { logger } from "@internal/logger"

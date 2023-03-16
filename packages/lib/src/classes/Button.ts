@@ -1,5 +1,5 @@
 import { APIEmbed, ButtonInteraction } from "discord.js"
-import { BetterClient, _BaseComponent, ButtonOptions } from "../.."
+import { BetterClient, _BaseComponent, ButtonOptions } from "../../index.js"
 
 export default class Button extends _BaseComponent {
 	constructor(key: string, client: BetterClient, options?: ButtonOptions) {

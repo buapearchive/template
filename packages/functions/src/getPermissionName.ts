@@ -1,5 +1,5 @@
 import { PermissionsString } from "discord.js"
-import { permissionNames } from "../permissions"
+import { permissionNames } from "../permissions.js"
 
 /**
  * Get the proper name of a permission.

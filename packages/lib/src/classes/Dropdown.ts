@@ -1,4 +1,4 @@
-import { BetterClient, _BaseComponent, DropdownOptions } from "../.."
+import { BetterClient, _BaseComponent, DropdownOptions } from "../../index.js"
 import { AnySelectMenuInteraction, APIEmbed } from "discord.js"
 
 export default class Dropdown extends _BaseComponent {

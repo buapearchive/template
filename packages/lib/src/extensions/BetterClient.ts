@@ -16,7 +16,7 @@ import {
 	ModalSubmitHandler,
 	TextCommand,
 	TextCommandHandler,
-} from "../.."
+} from "../../index.js"
 
 export default class BetterClient extends Client {
 	public usersUsingBot: Set<string>

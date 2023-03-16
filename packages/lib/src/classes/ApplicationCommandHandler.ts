@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable guard-for-in */
 import { Collection, ApplicationCommandData, CommandInteraction } from "discord.js"
-import { BetterClient, ApplicationCommand, _BaseHandler, _BaseComponent, HandlerType } from "../.."
+import { BetterClient, ApplicationCommand, _BaseHandler, _BaseComponent, HandlerType } from "../../index.js"
 import { logger } from "@internal/logger"
 import { generateErrorMessage } from "@internal/functions"
 

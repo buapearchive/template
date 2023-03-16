@@ -1,6 +1,6 @@
 /* eslint-disable import/order */
-import ModalSubmit from "./ModalSubmit"
-import { BetterClient } from "../.."
+import ModalSubmit from "./ModalSubmit.js"
+import { BetterClient } from "../../index.js"
 import { ComponentType, ModalSubmitInteraction } from "discord.js"
 import { generateErrorMessage, getFiles } from "@internal/functions"
 import { DebugType, logger } from "@internal/logger"

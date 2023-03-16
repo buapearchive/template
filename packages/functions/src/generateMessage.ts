@@ -1,5 +1,5 @@
 import { ActionRowBuilder, APIEmbed, ButtonBuilder, ButtonStyle, EmbedBuilder } from "discord.js"
-import { GeneratedMessage } from ".."
+import { GeneratedMessage } from "../index.js"
 import { colors } from "@internal/config"
 
 /**

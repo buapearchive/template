@@ -1,6 +1,6 @@
 // These are example handlers for fetching user or guild data from the database
 
-import db, { Prisma, UserGuildData } from ".."
+import db, { Prisma, UserGuildData } from "../index.js"
 
 export const getGuildData = async (guildId: string, include: Prisma.GuildInclude = {}) => {
 	if (!guildId) throw new Error("No guild ID provided")

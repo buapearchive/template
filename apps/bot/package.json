@@ -2,6 +2,7 @@
 	"name": "bot",
 	"private": true,
 	"main": "dist/src/index.js",
+	"type": "module",
 	"scripts": {
 		"olddev": "pnpm run clean && tsc -b -w && cross-env NODE_ENV=development node .",
 		"dev": "pnpm run clean && cross-env NODE_ENV=development tsc-watch --onSuccess \"node .\"",

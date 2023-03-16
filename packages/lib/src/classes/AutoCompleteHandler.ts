@@ -1,6 +1,6 @@
 import { logger } from "@internal/logger"
 import { AutocompleteInteraction } from "discord.js"
-import { BetterClient, ApplicationCommand } from "../.."
+import { BetterClient, ApplicationCommand } from "../../index.js"
 
 export default class AutoCompleteHandler {
 	/**

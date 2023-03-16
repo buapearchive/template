@@ -1,4 +1,4 @@
-import { BetterClient, HandlerType, ApplicationCommand, Button, Dropdown, _BaseComponent } from "../.."
+import { BetterClient, HandlerType, ApplicationCommand, Button, Dropdown, _BaseComponent } from "../../index.js"
 import { AnySelectMenuInteraction, ButtonInteraction, CommandInteraction, Message } from "discord.js"
 import { logger, DebugType } from "@internal/logger"
 import { generateErrorMessage, getFiles } from "@internal/functions"

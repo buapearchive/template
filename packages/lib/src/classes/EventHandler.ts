@@ -1,6 +1,6 @@
 import { logger } from "@internal/logger"
 import { ClientEvents } from "discord.js"
-import { BetterClient } from "../.."
+import { BetterClient } from "../../index.js"
 
 export default class EventHandler {
 	/**

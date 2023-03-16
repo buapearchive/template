@@ -1,7 +1,8 @@
 {
-	"name": "internal-api",
+	"name": "api",
 	"private": true,
 	"main": "dist/src/index.js",
+	"type": "module",
 	"scripts": {
 		"dev": "pnpm run clean && cross-env NODE_ENV=development tsc-watch --onSuccess \"node .\"",
 		"build": "pnpm run clean && tsc -b",

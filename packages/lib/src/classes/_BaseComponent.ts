@@ -1,4 +1,4 @@
-import { BetterClient, BaseComponentOptions } from "../.."
+import { BetterClient, BaseComponentOptions } from "../../index.js"
 import { APIEmbed, BaseInteraction, PermissionsBitField } from "discord.js"
 import { logger } from "@internal/logger"
 import { getPermissionName, isAdmin } from "@internal/functions"

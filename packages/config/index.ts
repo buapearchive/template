@@ -29,6 +29,6 @@ const requiredPermissions = new PermissionsBitField([
 const embedSpacer = "https://cdn.animeinterlink.com/r/embed_spacer.png"
 const emojiSpacer = "<:spacer:991733061182038178>"
 
-export * from "./settings"
+export * from "./settings.js"
 
 export { botName, admins, colors, intents, requiredPermissions, embedSpacer, emojiSpacer }
