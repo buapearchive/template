@@ -41,5 +41,5 @@
 		"apps/*",
 		"packages/*"
 	],
-	"packageManager": "pnpm@7.29.3"
+	"packageManager": "pnpm@7.30.5"
 }
