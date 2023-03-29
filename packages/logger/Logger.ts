@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Logger as WinstonLogger, createLogger, transports, format } from "winston"
-import { DebugType } from "."
+import { DebugType } from "./index.js"
 
 export default class Logger {
 	private winston: WinstonLogger
