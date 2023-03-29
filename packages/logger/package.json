@@ -8,7 +8,7 @@
 		"lint": "eslint . --ext .ts --fix",
 		"build": "tsc",
 		"dev": "tsc -w",
-		"clean": "rimraf dist turbo-*.log"
+		"clean": "rimraf dist turbo-*.log --glob"
 	},
 	"dependencies": {
 		"winston": "^3.8.2"

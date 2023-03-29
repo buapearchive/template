@@ -16,7 +16,7 @@
 	},
 	"scripts": {
 		"build": "pnpm run db:generate && tsc",
-		"clean": "rimraf dist turbo-*.log",
+		"clean": "rimraf dist turbo-*.log --glob",
 		"db:generate": "prisma generate",
 		"db:push": "prisma db push",
 		"db:studio": "prisma studio",
