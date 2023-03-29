@@ -35,6 +35,7 @@ yarn-error.log*
 # env
 .env*
 !packages/database/.env
+!.env.example
 
 # typescript
 **/dist

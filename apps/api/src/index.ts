@@ -14,5 +14,5 @@ app.all("*", (_req, res) => {
 })
 
 app.listen(process.env.API_PORT, () => {
-	logger.info(`API listening on port ${process.env.INTERNAL_PORT}`)
+	logger.info(`API listening on port ${process.env.API_PORT}`)
 })
