@@ -41,13 +41,17 @@ export default class Ready extends EventHandler {
 
 async function loadAndStartCrons(client: BetterClient) {
 	logger.info("[CRON] Starting CRONs...")
-	const jobs = getFiles(join(client.__dirname, "../jobs"), "js")
-	for await (const job of jobs) {
-		logger.info(`[CRON] Starting CRON "${job}"`)
-		// eslint-disable-next-line no-await-in-loop
-		const { startCron } = await import(join(__dirname, "../jobs", job))
-		startCron(client)
-		logger.info(`[CRON] Started CRON "${job}"`)
+	try {
+		const jobs = getFiles(join(client.__dirname, "../jobs"), "js")
+		for await (const job of jobs) {
+			logger.info(`[CRON] Starting CRON "${job}"`)
+			// eslint-disable-next-line no-await-in-loop
+			const { startCron } = await import(join(__dirname, "../jobs", job))
+			startCron(client)
+			logger.info(`[CRON] Started CRON "${job}"`)
+		}
+		logger.info(`[CRON] Started ${jobs.length} CRONs.`)
+	} catch (error) {
+		logger.warn("[CRON] Failed to load CRONs.")
 	}
-	logger.info(`[CRON] Started ${jobs.length} CRONs.`)
 }
