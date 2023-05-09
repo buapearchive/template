@@ -17,8 +17,8 @@ export default class BaseComponent {
 	constructor(key: string, client: BetterClient, options: BaseComponentOptions) {
 		this.key = key
 		this.client = client
-		if (this.permissions) this.permissions = new PermissionsBitField(options.permissions)
-		if (this.clientPermissions) this.clientPermissions = new PermissionsBitField(options.clientPermissions)
+		if (options.permissions) this.permissions = options.permissions
+		if (options.clientPermissions) this.clientPermissions = options.clientPermissions
 		this.adminOnly = options.adminOnly || false
 		this.guildOnly = options.guildOnly || false
 		this.ownerOnly = options.ownerOnly || false
@@ -34,14 +34,16 @@ export default class BaseComponent {
 			}
 		}
 
-		if (interaction.guild) {
+		await interaction.guild?.fetch()
+
+		if (interaction.guildId) {
 			if (this.ownerOnly && interaction.guild?.ownerId !== interaction.user.id) {
 				return {
 					title: "Missing Permissions",
 					description: "This action can only be ran by the owner of this guild!",
 				}
 			}
-			if (interaction.guild && this.permissions && interaction.memberPermissions?.has(this.permissions)) {
+			if (this.permissions && !interaction.memberPermissions?.has(this.permissions)) {
 				return {
 					title: "Missing Permissions",
 					description: `You need the ${this.permissions
@@ -50,7 +52,7 @@ export default class BaseComponent {
 						.join(", ")} permission${this.permissions.toArray().length > 1 ? "s" : ""} to run this action.`,
 				}
 			}
-			if (interaction.guild && this.clientPermissions && !interaction.guild?.members.me?.permissions.has(this.clientPermissions)) {
+			if (this.clientPermissions && !interaction.guild?.members.me?.permissions.has(this.clientPermissions)) {
 				return {
 					title: "Missing Permissions",
 					description: `I need the ${this.clientPermissions
