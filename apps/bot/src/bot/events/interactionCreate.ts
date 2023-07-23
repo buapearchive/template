@@ -1,8 +1,8 @@
 /* eslint-disable operator-linebreak */
 import { ChatInputCommandInteraction, Interaction, InteractionType } from "discord.js"
-import { EventHandler } from "@internal/lib"
+import { EventHandler } from "@buape/lib"
 import { logger } from "@internal/logger"
-import { generateErrorMessage } from "@internal/functions"
+import { generateEmbed } from "@buape/functions"
 
 export default class InteractionCreate extends EventHandler {
 	override async run(interaction: Interaction) {
@@ -17,7 +17,7 @@ export default class InteractionCreate extends EventHandler {
 			return this.client.modalSubmitHandler.handleModal(interaction)
 		}
 		if (interaction.type === InteractionType.ApplicationCommandAutocomplete) {
-			return this.client.autoCompleteHandler.handleAutoComplete(interaction)
+			return this.client.autocompleteHandler.handleAutocomplete(interaction)
 		}
 
 		if (interaction.type === InteractionType.ApplicationCommand) {
@@ -38,14 +38,16 @@ export default class InteractionCreate extends EventHandler {
 		return interaction.isRepliable()
 			? // @ts-ignore
 			  interaction.reply(
-				generateErrorMessage(
+				generateEmbed(
+					"error",
 					{
 						title: "Invalid Interaction",
-						description: "I've never seen this type of interaction",
+						description: "I've never seen this type of interaction"
 					},
+					[],
 					true
 				)
-			  )
+			)
 			: logger.warn(`Interaction was not repliable`)
 	}
 }

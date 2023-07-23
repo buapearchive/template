@@ -1,8 +1,8 @@
 import database from "@internal/database"
-import { getFiles } from "@internal/functions"
-import { BetterClient, EventHandler } from "@internal/lib"
+import { getFiles } from "@buape/functions"
+import { BetterClient, EventHandler } from "@buape/lib"
 import { logger } from "@internal/logger"
-import { join } from "path"
+import path from "path"
 
 export default class Ready extends EventHandler {
 	override async run() {
@@ -40,18 +40,25 @@ export default class Ready extends EventHandler {
 }
 
 async function loadAndStartCrons(client: BetterClient) {
-	logger.info("[CRON] Starting CRONs...")
 	try {
-		const jobs = getFiles(join(client.__dirname, "../jobs"), "js")
-		for await (const job of jobs) {
-			logger.info(`[CRON] Starting CRON "${job}"`)
-			// eslint-disable-next-line no-await-in-loop
-			const { startCron } = await import(join(__dirname, "../jobs", job))
-			startCron(client)
-			logger.info(`[CRON] Started CRON "${job}"`)
-		}
-		logger.info(`[CRON] Started ${jobs.length} CRONs.`)
-	} catch (error) {
-		logger.warn("[CRON] Failed to load CRONs.")
+		const cronJobsPath = path.join(client.__dirname, "src", "bot", "jobs")
+		const cronJobFileNames = getFiles(cronJobsPath, "js", true)
+
+		await Promise.all(
+			cronJobFileNames.map(async (cronJobFileName) => {
+				try {
+					const filePath = path.join(cronJobsPath, cronJobFileName)
+					const fileUrl = `file://${filePath.replace(/\\/g, "/")}`
+
+					const { startCron } = await import(fileUrl)
+					startCron(client)
+					logger.info(`[CRON] Loaded cron job ${cronJobFileName}`)
+				} catch (error) {
+					logger.error(`[CRON] Failed to load cron job: ${cronJobFileName} - ${error}`)
+				}
+			})
+		)
+	} catch (e) {
+		logger.warn(`[CRON] Failed to load files for cron job handler: ${e}`)
 	}
 }

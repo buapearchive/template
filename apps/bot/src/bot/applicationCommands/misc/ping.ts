@@ -1,4 +1,4 @@
-import { ApplicationCommand, BetterClient } from "@internal/lib"
+import { ApplicationCommand, BetterClient } from "@buape/lib"
 import { ChatInputCommandInteraction, Message } from "discord.js"
 
 export default class Command extends ApplicationCommand {

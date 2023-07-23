@@ -1,7 +1,18 @@
 import { GatewayIntentBits, PermissionsBitField, PermissionFlagsBits } from "discord.js"
+import { AccessSettings } from "@buape/functions"
 
-const botName = "Kiai"
-const admins = ["439223656200273932"]
+const botName = "Template"
+
+enum RestrictionType {
+	ADMIN = "admin",
+}
+
+const accessSettings: AccessSettings = {
+	server: process.env.MAIN_GUILD_ID as string,
+	roles: {
+		admin: ["1080982946170818630", "1080982870513958942"],
+	}
+}
 
 const colors = {
 	primary: 0xd8833b,
@@ -31,4 +42,4 @@ const emojiSpacer = "<:spacer:991733061182038178>"
 
 export * from "./settings.js"
 
-export { botName, admins, colors, intents, requiredPermissions, embedSpacer, emojiSpacer }
+export { botName, RestrictionType, accessSettings, colors, intents, requiredPermissions, embedSpacer, emojiSpacer }

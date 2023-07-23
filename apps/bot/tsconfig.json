@@ -1,6 +1,6 @@
 {
     "extends": "tsconfig/bot.json",
-    "include": ["./src"],
+    "include": ["./src", "jobs"],
     "compilerOptions": {
         "outDir": "./dist"
     }
