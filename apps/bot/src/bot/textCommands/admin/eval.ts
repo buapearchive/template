@@ -1,22 +1,31 @@
 /* eslint-disable no-unused-vars */
 import * as config from "@internal/config"
-import { TextCommand, BetterClient, StopWatch, Type } from "@internal/lib"
+import { TextCommand, BetterClient, Type } from "@buape/lib"
+import { Stopwatch } from "@sapphire/stopwatch"
 import { logger, DebugType } from "@internal/logger"
 import { Message, EmbedBuilder } from "discord.js"
 import { inspect } from "util"
 import db from "@internal/database"
 import * as database from "@internal/database"
-import * as lib from "@internal/lib"
-import * as functions from "@internal/functions"
-const bot = { db, database, config, lib, functions, logger: { logger, DebugType } }
+import * as lib from "@buape/lib"
+import { uploadHaste } from "@buape/functions"
+import * as buapeFunctions from "@buape/functions"
+const kiai = {
+	db,
+	database,
+	config,
+	lib,
+	buapeFunctions,
+	logger: { logger, DebugType },
+}
 
 export default class Eval extends TextCommand {
 	constructor(client: BetterClient) {
 		super("eval", client, {
-			adminOnly: true,
+			restriction: config.RestrictionType.ADMIN
 		})
 
-		logger.null(bot)
+		logger.null(kiai)
 	}
 
 	override async run(message: Message, args: string[]) {
@@ -31,16 +40,16 @@ export default class Eval extends TextCommand {
 				embeds: [
 					new EmbedBuilder({
 						title: success ? "🆗 Evaluated successfully." : "🆘 JavaScript failed.",
-						description: `Output too long for Discord, view it [here](${await functions.uploadHaste(result, "js")})`,
+						description: `Output too long for Discord, view it [here](${await uploadHaste(result, "js")})`,
 						fields: [
 							{
 								name: "Type",
-								value: `\`\`\`ts\n${type}\`\`\`\n${time}`,
-							},
+								value: `\`\`\`ts\n${type}\`\`\`\n${time}`
+							}
 						],
-						color: success ? config.colors.success : config.colors.error,
-					}),
-				],
+						color: success ? config.colors.success : config.colors.error
+					})
+				]
 			})
 		}
 
@@ -52,12 +61,12 @@ export default class Eval extends TextCommand {
 					fields: [
 						{
 							name: "Type",
-							value: `\`\`\`ts\n${type}\`\`\`\n${time}`,
-						},
+							value: `\`\`\`ts\n${type}\`\`\`\n${time}`
+						}
 					],
-					color: success ? config.colors.success : config.colors.error,
-				}),
-			],
+					color: success ? config.colors.success : config.colors.error
+				})
+			]
 		})
 	}
 
@@ -67,7 +76,7 @@ export default class Eval extends TextCommand {
 		//     logger.info("Eval has been executed")
 		// }
 		let code = codeInput.replace(/[“”]/g, "\"").replace(/[‘’]/g, "'")
-		const stopwatch = new StopWatch()
+		const stopwatch = new Stopwatch()
 		let success
 		let syncTime
 		let asyncTime
@@ -93,7 +102,7 @@ export default class Eval extends TextCommand {
 			if (!syncTime) syncTime = stopwatch.toString()
 			if (!type) type = new Type(error)
 			if (thenable && !asyncTime) asyncTime = stopwatch.toString()
-			if (error && error.stack) this.client.emit("error", error.stack)
+			if (error?.stack) this.client.emit("error", error.stack)
 			result = error
 			success = false
 		}
@@ -103,7 +112,7 @@ export default class Eval extends TextCommand {
 			success,
 			type,
 			time: this.formatTime(syncTime, asyncTime),
-			result: this.parseContent(inspect(result)),
+			result: this.parseContent(inspect(result))
 		}
 	}
 

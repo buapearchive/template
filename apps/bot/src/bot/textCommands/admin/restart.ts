@@ -1,11 +1,12 @@
-import { generateTimestamp } from "@internal/functions"
-import { TextCommand, BetterClient } from "@internal/lib"
+import { generateTimestamp } from "@buape/functions"
+import { TextCommand, BetterClient } from "@buape/lib"
+import { RestrictionType } from "@internal/config"
 import { Message } from "discord.js"
 
 export default class Restart extends TextCommand {
 	constructor(client: BetterClient) {
 		super("restart", client, {
-			adminOnly: true,
+			restriction: RestrictionType.ADMIN,
 		})
 	}
 

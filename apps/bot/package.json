@@ -12,13 +12,14 @@
 		"clean": "rimraf dist turbo-*.log --glob"
 	},
 	"dependencies": {
+		"@buape/functions": "^1.0.1",
+		"@buape/lib": "^1.0.4",
 		"@internal/config": "workspace:*",
 		"@internal/database": "workspace:*",
-		"@internal/functions": "workspace:*",
-		"@internal/lib": "workspace:*",
 		"@internal/logger": "workspace:*",
+		"@sapphire/stopwatch": "^1.5.0",
 		"croner": "^6.0.0",
-		"discord.js": "^14.7.1"
+		"discord.js": "^14.11.0"
 	},
 	"devDependencies": {
 		"@types/ms": "^0.7.31",

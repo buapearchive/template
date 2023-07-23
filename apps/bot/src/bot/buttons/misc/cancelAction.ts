@@ -1,4 +1,4 @@
-import { Button, BetterClient } from "@internal/lib"
+import { Button, BetterClient } from "@buape/lib"
 import { ButtonInteraction } from "discord.js"
 
 export default class EditEmbed extends Button {

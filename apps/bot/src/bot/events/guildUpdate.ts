@@ -1,4 +1,4 @@
-import { EventHandler } from "@internal/lib"
+import { EventHandler } from "@buape/lib"
 import db from "@internal/database"
 import { Guild } from "discord.js"
 
