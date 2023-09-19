@@ -11,7 +11,7 @@
 		"clean": "rimraf dist turbo-*.log --glob"
 	},
 	"dependencies": {
-		"winston": "^3.8.2"
+		"winston": "^3.10.0"
 	},
 	"devDependencies": {
 		"tsconfig": "workspace:*"
