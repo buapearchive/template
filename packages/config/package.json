@@ -11,7 +11,7 @@
 		"clean": "rimraf dist turbo-*.log --glob"
 	},
 	"devDependencies": {
-		"@types/node": "^18.17.17",
+		"@types/node": "^18.17.18",
 		"discord.js": "^14.13.0",
 		"tsconfig": "workspace:*"
 	}
