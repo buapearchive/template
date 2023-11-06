@@ -27,8 +27,8 @@ There are several scripts available for you to use in this template. These are a
 -   `dev` - This will start all your apps in development mode.
     -   To run only one app, use the `--filter` option. See [How to Run the Project](#how-to-run-the-project).
 -   `publish` - This will publish all changesets that have been created since the last release.
--   `pretty` - This will run Prettier and ESLint together on all files in Kiai.
--   `start` - This will start Kiai in production mode.
+-   `pretty` - This will run Biome together on all files in the bot.
+-   `start` - This will start the bot in production mode.
 
 ## Monorepo Structure
 
