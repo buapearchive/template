@@ -1,6 +1,6 @@
-import { RestrictionType } from "@internal/config"
 import { parseUser } from "@buape/functions"
-import { TextCommand, BetterClient } from "@buape/lib"
+import { BetterClient, TextCommand } from "@buape/lib"
+import { RestrictionType } from "@internal/config"
 import { Message } from "discord.js"
 
 export default class Sudo extends TextCommand {

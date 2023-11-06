@@ -1,10 +1,10 @@
-import { Button, BetterClient } from "@buape/lib"
+import { BetterClient, Button } from "@buape/lib"
 import { ButtonInteraction } from "discord.js"
 
 export default class EditEmbed extends Button {
 	constructor(client: BetterClient) {
 		super("cancelAction", client, {
-			authorOnly: true,
+			authorOnly: true
 		})
 	}
 
@@ -15,7 +15,7 @@ export default class EditEmbed extends Button {
 			content: "Action cancelled.",
 			embeds: [],
 			components: [],
-			attachments: [],
+			attachments: []
 		})
 	}
 }

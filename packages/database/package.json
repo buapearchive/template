@@ -20,7 +20,6 @@
 		"db:generate": "prisma generate",
 		"db:push": "prisma db push",
 		"db:studio": "prisma studio",
-		"dev": "tsc -w",
-		"lint": "eslint . --ext .ts --fix"
+		"dev": "tsc -w"
 	}
 }

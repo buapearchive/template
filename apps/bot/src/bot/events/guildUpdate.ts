@@ -6,15 +6,15 @@ export default class GuildUpdate extends EventHandler {
 	override async run(_oldGuild: Guild, newGuild: Guild) {
 		await db.guild.upsert({
 			where: {
-				id: newGuild.id,
+				id: newGuild.id
 			},
 			create: {
 				id: newGuild.id,
-				name: newGuild.name,
+				name: newGuild.name
 			},
 			update: {
-				name: newGuild.name,
-			},
+				name: newGuild.name
+			}
 		})
 	}
 }
