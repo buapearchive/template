@@ -2,48 +2,57 @@
 
 import db, { Prisma, UserGuildData } from "../index.js"
 
-export const getGuildData = async (guildId: string, include: Prisma.GuildInclude = {}) => {
+export const getGuildData = async (
+	guildId: string,
+	include: Prisma.GuildInclude = {}
+) => {
 	if (!guildId) throw new Error("No guild ID provided")
 	const guildData = await db.guild.upsert({
 		where: {
-			id: guildId,
+			id: guildId
 		},
 		update: {},
 		create: {
-			id: guildId,
+			id: guildId
 		},
-		include,
+		include
 	})
 	return guildData
 }
 
-export const getUserData = async (userId: string, include: Prisma.UserInclude = {}) => {
+export const getUserData = async (
+	userId: string,
+	include: Prisma.UserInclude = {}
+) => {
 	const userData = await db.user.upsert({
 		where: {
-			id: userId,
+			id: userId
 		},
 		update: {},
 		create: {
-			id: userId,
+			id: userId
 		},
-		include,
+		include
 	})
 	return userData
 }
 
-export const getUserGuildData = async (userId: string, guildId: string): Promise<UserGuildData> => {
+export const getUserGuildData = async (
+	userId: string,
+	guildId: string
+): Promise<UserGuildData> => {
 	const userGuildData = await db.userGuildData.upsert({
 		where: {
 			userId_guildId: {
 				userId,
-				guildId,
-			},
+				guildId
+			}
 		},
 		update: {},
 		create: {
 			userId,
-			guildId,
-		},
+			guildId
+		}
 	})
 	return userGuildData
 }

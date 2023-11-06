@@ -8,5 +8,5 @@ export enum DebugType {
 	COMMAND = "command",
 	EVENT = "event",
 	I18N = "i18n",
-	LVL = "leveling",
+	LVL = "leveling"
 }

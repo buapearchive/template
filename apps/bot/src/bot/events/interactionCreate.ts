@@ -1,14 +1,19 @@
-/* eslint-disable operator-linebreak */
-import { ChatInputCommandInteraction, Interaction, InteractionType } from "discord.js"
+import { generateEmbed } from "@buape/functions"
 import { EventHandler } from "@buape/lib"
 import { logger } from "@internal/logger"
-import { generateEmbed } from "@buape/functions"
+import {
+	ChatInputCommandInteraction,
+	Interaction,
+	InteractionType
+} from "discord.js"
 
 export default class InteractionCreate extends EventHandler {
 	override async run(interaction: Interaction) {
 		logger.info(
 			`${interaction.type} interaction created by ${interaction.user.id}${
-				interaction.type === InteractionType.ApplicationCommand ? `: ${interaction.toString()}` : ""
+				interaction.type === InteractionType.ApplicationCommand
+					? `: ${interaction.toString()}`
+					: ""
 			}`
 		)
 		if (!interaction.guild) return
@@ -21,7 +26,9 @@ export default class InteractionCreate extends EventHandler {
 		}
 
 		if (interaction.type === InteractionType.ApplicationCommand) {
-			return this.client.applicationCommandHandler.handleComponent(interaction as ChatInputCommandInteraction)
+			return this.client.applicationCommandHandler.handleComponent(
+				interaction as ChatInputCommandInteraction
+			)
 		}
 
 		if (interaction.type === InteractionType.MessageComponent) {
@@ -33,21 +40,23 @@ export default class InteractionCreate extends EventHandler {
 			}
 		}
 
-		logger.thrownError(new Error("Invalid Interaction: Never seen this before."))
+		logger.thrownError(
+			new Error("Invalid Interaction: Never seen this before.")
+		)
 		// @ts-ignore
 		return interaction.isRepliable()
 			? // @ts-ignore
 			  interaction.reply(
-				generateEmbed(
-					"error",
-					{
-						title: "Invalid Interaction",
-						description: "I've never seen this type of interaction"
-					},
-					[],
-					true
-				)
-			)
+					generateEmbed(
+						"error",
+						{
+							title: "Invalid Interaction",
+							description: "I've never seen this type of interaction"
+						},
+						[],
+						true
+					)
+			  )
 			: logger.warn(`Interaction was not repliable`)
 	}
 }
