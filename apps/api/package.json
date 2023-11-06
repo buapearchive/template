@@ -7,7 +7,6 @@
 		"dev": "pnpm run clean && cross-env NODE_ENV=development tsc-watch --onSuccess \"node .\"",
 		"build": "pnpm run clean && tsc -b",
 		"start": "cross-env NODE_ENV=production node .",
-		"lint": "eslint . --ext .ts --fix",
 		"clean": "rimraf dist turbo-*.log --glob"
 	},
 	"dependencies": {
