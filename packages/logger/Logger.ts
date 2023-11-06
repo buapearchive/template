@@ -27,7 +27,8 @@ export default class Logger {
 		})
 	}
 
-	public log(message: string, properties?: { [key: string]: never }): void {
+	// biome-ignore lint/suspicious/noExplicitAny: logger
+	public log(message: string, properties?: { [key: string]: any }): void {
 		this.winston.log(message, properties)
 	}
 
@@ -35,7 +36,8 @@ export default class Logger {
 		// biome-ignore lint/suspicious/noExplicitAny: logger
 		message: any,
 		type: DebugType = DebugType.GENERAL,
-		properties?: { [key: string]: never }
+		// biome-ignore lint/suspicious/noExplicitAny: logger
+		properties?: { [key: string]: any }
 	): void {
 		// biome-ignore lint/style/noParameterAssign: small function; readable
 		if (typeof message === "object") message = JSON.stringify(message, null, 2)
@@ -44,18 +46,21 @@ export default class Logger {
 
 	public warn(
 		message: string,
-		properties: { [key: string]: never } = {}
+		// biome-ignore lint/suspicious/noExplicitAny: logger
+		properties: { [key: string]: any } = {}
 	): void {
 		this.winston.warn(message, properties)
 	}
 
-	public info(message: string, properties?: { [key: string]: never }): void {
+	// biome-ignore lint/suspicious/noExplicitAny: logger
+	public info(message: string, properties?: { [key: string]: any }): void {
 		this.winston.info(message, properties)
 	}
 
 	public error(
 		message: string,
-		properties: { [key: string]: never } = {}
+		// biome-ignore lint/suspicious/noExplicitAny: logger
+		properties: { [key: string]: any } = {}
 	): void {
 		this.winston.error(message)
 		this.null(properties)
@@ -63,7 +68,8 @@ export default class Logger {
 
 	public thrownError(
 		error: Error,
-		properties: { [key: string]: never } = {}
+		// biome-ignore lint/suspicious/noExplicitAny: logger
+		properties: { [key: string]: any } = {}
 	): void {
 		console.error(error)
 		this.winston.error(`${error.message} ${error.stack}`)
