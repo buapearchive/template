@@ -98,8 +98,8 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0
       croner:
-        specifier: ^7.0.1
-        version: 7.0.4
+        specifier: ^8.0.0
+        version: 8.0.0
       discord.js:
         specifier: ^14.13.0
         version: 14.13.0
@@ -1074,9 +1074,9 @@ packages:
       vary: 1.1.2
     dev: false
 
-  /croner@7.0.4:
-    resolution: {integrity: sha512-P8Zd88km8oQ0xH8Es0u75GtOnFyCNopuAhlFv5kAnbcTuXd0xNvRTgnxnJEs63FicCOsHTL7rpu4BHzY3cMq4w==}
-    engines: {node: '>=6.0'}
+  /croner@8.0.0:
+    resolution: {integrity: sha512-NhZ7wV9L0nxbSJKYp6u+OHCytFv4RlCu0O6GsglJIZMpMqmtb0kcNNPS5lv1O8qclhDA1NffLSsGx2ftbWQamw==}
+    engines: {node: '>=18.0'}
     dev: false
 
   /cross-env@7.0.3:
