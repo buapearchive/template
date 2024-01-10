@@ -33,7 +33,7 @@ jobs:
               uses: ./.github/actions/setup
 
             - name: Setup Biome
-              uses: biomejs/setup-biome@v1
+              uses: biomejs/setup-biome@v2
               with:
                   version: latest
 
