@@ -47,7 +47,7 @@ importers:
     dependencies:
       '@buape/functions':
         specifier: ^1.0.1
-        version: 1.0.2
+        version: 1.0.4
       '@internal/config':
         specifier: workspace:*
         version: link:../../packages/config
@@ -81,7 +81,7 @@ importers:
     dependencies:
       '@buape/functions':
         specifier: ^1.0.1
-        version: 1.0.2
+        version: 1.0.4
       '@buape/lib':
         specifier: ^1.0.6
         version: 1.0.7
@@ -263,8 +263,8 @@ packages:
     dev: true
     optional: true
 
-  /@buape/functions@1.0.2:
-    resolution: {integrity: sha512-HiZOZYUu49Enr1m/Z9ABQIanUSeezkW+S0fOKURO6SNVDTpu7ZYvihofeE9syDFxm6UC97K9lwelgyneHtKFGw==}
+  /@buape/functions@1.0.4:
+    resolution: {integrity: sha512-J9pbm/b95dhGj2rUp3rTPb8/QuPOLNVkxBveXMkHi86tSv8BB8kSSFtJmj6I0te68ICIMHuKsoMFT/gKX2Qeow==}
     engines: {node: '>=16.17.1'}
     dependencies:
       discord.js: 14.13.0
@@ -277,7 +277,7 @@ packages:
     resolution: {integrity: sha512-OYb93I3fjMI8bDMpEpBPm0KSctv6jQ3brRAGZkAyMjESBbS7JqdH7jXl838ZHmExDW0U/Q2QTiA1VCi865zNow==}
     engines: {node: '>=16.17.1'}
     dependencies:
-      '@buape/functions': 1.0.2
+      '@buape/functions': 1.0.4
       discord.js: 14.13.0
     transitivePeerDependencies:
       - bufferutil
