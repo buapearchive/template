@@ -69,7 +69,7 @@ importers:
     devDependencies:
       '@types/cors':
         specifier: ^2.8.14
-        version: 2.8.15
+        version: 2.8.17
       '@types/node':
         specifier: ^20.0.0
         version: 20.8.10
@@ -659,8 +659,8 @@ packages:
       '@types/node': 20.8.10
     dev: false
 
-  /@types/cors@2.8.15:
-    resolution: {integrity: sha512-n91JxbNLD8eQIuXDIChAN1tCKNWCEgpceU9b7ZMbFA+P+Q4yIeh80jizFLEvolRPc1ES0VdwFlGv+kJTSirogw==}
+  /@types/cors@2.8.17:
+    resolution: {integrity: sha512-8CGDvrBj1zgo2qE+oS3pOCyYNqCPryMWY2bGfwA0dcfopWGgxs+78df0Rs3rc9THP4JkOhLsAa+15VdpAqkcUA==}
     dependencies:
       '@types/node': 20.8.10
     dev: true
